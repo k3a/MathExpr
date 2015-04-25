@@ -11,7 +11,8 @@ Improved in several ways:
 - supports boolean operators: >, >=, <, <=, &&, ||, !
 - supports boolean constants true and false
 - basic support for strings so it's possible to compare them: str == "test" || str == 'test'
-- Token (value) struct now contains either float number or std:string
+- wildcards matching support operators =~, !~: str =~ 't*s*'
+- token (value) struct now contains either float number or std:string
 
 # Minimal example.
 

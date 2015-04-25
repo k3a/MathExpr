@@ -9,6 +9,7 @@
 #include <sstream>
 #include <stdexcept>
 #include <math.h>
+#include <fnmatch.h>
 
 #include "MathExpr.h"
 
@@ -188,6 +189,11 @@ MathExpr::ValuePtrQueue MathExpr::toRPN(const char* expr, ValueMap* vars, IntMap
     return rpnQueue;
 }
 
+static bool widcardCompare(std::string str, std::string wc)
+{
+    return !fnmatch(wc.c_str(), str.c_str(), FNM_NOESCAPE | FNM_PERIOD);
+}
+
 MathExpr::Value MathExpr::eval(const char* expr, ValueMap* vars) {
     
     // Convert to RPN with Dijkstra's Shunting-yard algorithm.
@@ -264,6 +270,10 @@ MathExpr::Value MathExpr::eval(const char* expr, ValueMap* vars) {
                 else
                     evaluation.push(left.toNumber() != right.toNumber());
             }
+            else if (!str.compare("=~"))
+                evaluation.push( widcardCompare(left.toString(), right.toString()) );
+            else if (!str.compare("!~"))
+                evaluation.push( !widcardCompare(left.toString(), right.toString()) );
             else if (!str.compare("!"))
                 evaluation.push(!right.toNumber());
             else
