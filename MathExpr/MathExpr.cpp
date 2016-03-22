@@ -10,6 +10,7 @@
 #include <stdexcept>
 #include <math.h>
 #include <fnmatch.h>
+#include <stdio.h> # sprintf
 
 #include "MathExpr.h"
 
