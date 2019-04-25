@@ -3,6 +3,7 @@
 // Author: Jesse Brown
 // Modifications: Brandon Amos
 // Modifications: www.K3A.me (changed token class, float numbers, added support for boolean operators, added support for strings)
+// Licence: MIT
 
 #include <cstdlib>
 #include <iostream>
