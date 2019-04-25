@@ -36,3 +36,6 @@ int main() {
 
 File main.cpp contains some basic tests.
 
+# License
+MIT
+
