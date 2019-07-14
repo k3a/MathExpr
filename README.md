@@ -12,7 +12,7 @@ Based on [bamos/cpp-expression-parser](https://github.com/bamos/cpp-expression-p
 - wildcards matching support operators =~, !~: str =~ 't*s*'
 - token (value) struct containing either float number or std:string
 
-# ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `Deprecated`
+# ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) Deprecated
 
 Over time, [bamos/cpp-expression-parser](https://github.com/bamos/cpp-expression-parser/) improved and it looks like all these features are now part of it so I recommend you use that instead. This repo will be kept for compatibility reasons and eventual security fixes.
 
